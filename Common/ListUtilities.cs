@@ -4,13 +4,21 @@ public static class ListUtilities
 {
     public static void VerifySorted(IEnumerable<int> input)
     {
+        VerifySorted(input, 0, input.Count() - 1);
+    }
+    
+    public static void VerifySorted(IEnumerable<int> input, int start, int end, bool @throw = false)
+    {
         var list = input.ToList();
-        for (int i = 0; i < list.Count - 1; i++)
+        for (int i = start; i < end; i++)
         {
             if (list[i] > list[i + 1])
             {
                 Console.WriteLine("Failed to sort");
-                Environment.Exit(-1);
+                if (@throw)
+                {
+                    throw new Exception($"IEnumerable not sorted at index {i}");
+                }
             }
         }
     }
