@@ -1,8 +1,9 @@
 ﻿using System.Diagnostics;
 using static Common.ListUtilities;
 
+// Description: maximums are bubbled out of the unsorted section.
 // stable
-// space complexity O(1) aka in-place 
+// space complexity O(1) aka in-place
 // O(n²) time complexity in the average and worst cases
 // O(n) time complexity in best case
 

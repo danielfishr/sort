@@ -15,10 +15,10 @@ public static class ListUtilities
         }
     }
 
-    public static List<int> CreateList(int size)
+    public static List<int> CreateList(int size, int? seed = null)
     {
         List<int> ints = new List<int>();
-        Random random = new Random();
+        Random random = new Random(seed ?? new Random().Next());
         foreach (var _ in Enumerable.Range(1, size))
         {
             ints.Add(random.Next(size * 2));
